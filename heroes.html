@@ -97,8 +97,65 @@
                 <p><strong>Роль:</strong> Керри</p>
                 <p><strong>Основная характеристика:</strong> Ловкость</p>
                 <p><strong>Тип атаки:</strong> Дистанционный</p>
+                
                 <p><strong>Описание:</strong> Shadow Fiend — могущественный герой, обладающий способностью накапливать души убитых существ и усиливать свой урон. Его ультимативная способность Requiem of Souls способна нанести огромный урон всем врагам в радиусе действия.</p>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ползунок для уровня и урона</title>
+    <style>
+        /* Стилизация контейнера */
+        .slider-container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        /* Стилизация вывода значений */
+        .slider-values {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <input type="range" id="level-slider" min="1" max="30" value="15">
+    <div class="slider-values">
+        Уровень: <span id="level">15</span><br>
+        Урон: <span id="damage">150</span>
+    </div>
+</div>
+
+<script>
+    // Получаем элементы
+    const levelSlider = document.getElementById('level-slider');
+    const levelOutput = document.getElementById('level');
+    const damageOutput = document.getElementById('damage');
+
+    // Функция для обновления значений уровня и урона
+    function updateValues() {
+        let level = levelSlider.value;
+        let damage = level * 10;
+
+        levelOutput.innerText = level;
+        damageOutput.innerText = damage;
+    }
+
+    // Обновляем значения при изменении положения ползунка
+    levelSlider.oninput = updateValues;
+
+    // Изначально устанавливаем значения
+    updateValues();
+</script>
+
+</body>
+</html>
                 <a href="shadow-fiend.html">Подробнее...</a>
+                
             </div>
         </div>
         <!-- Добавьте другие герои здесь -->
